@@ -58,14 +58,14 @@
      * @type {String}
      */
     this.template = '<div class="cfp-hotkeys-container fade" ng-class="{in: helpVisible}" style="display: none;"><div class="cfp-hotkeys">' +
-                      '<h4 class="cfp-hotkeys-title" ng-if="!header">{{ title }}</h4>' +
+                      '<h4 class="cfp-hotkeys-title" ng-if="!header">{{ title | translate }}</h4>' +
                       '<div ng-bind-html="header" ng-if="header"></div>' +
                       '<table><tbody>' +
                         '<tr ng-repeat="row in cheatSheetColumns">' +
                           '<td class="cfp-hotkeys-keys" ng-repeat-start="hotkey in row | filter:{ description: \'!$$undefined$$\' }">' +
                             '<span ng-repeat="key in hotkey.format() track by $index" class="cfp-hotkeys-key">{{ key }}</span>' +
                           '</td>' +
-                          '<td class="cfp-hotkeys-text" ng-repeat-end>{{ hotkey.description }}</td>' +
+                          '<td class="cfp-hotkeys-text" ng-repeat-end>{{ hotkey.description | translate }}</td>' +
                         '</tr>' +
                       '</tbody></table>' +
                       '<div ng-bind-html="footer" ng-if="footer"></div>' +
